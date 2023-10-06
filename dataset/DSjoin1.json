@@ -1,0 +1,81 @@
+{
+	"name": "DSjoin1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCasestudy3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-ba7b3ff7-31f3-4e58-84bc-17dcaf426014-c000.csv",
+				"container": "outputretail"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "10",
+				"type": "String"
+			},
+			{
+				"name": "05/02/2010",
+				"type": "String"
+			},
+			{
+				"name": "42.31",
+				"type": "String"
+			},
+			{
+				"name": "2.572",
+				"type": "String"
+			},
+			{
+				"name": "NA4",
+				"type": "String"
+			},
+			{
+				"name": "NA5",
+				"type": "String"
+			},
+			{
+				"name": "NA6",
+				"type": "String"
+			},
+			{
+				"name": "NA7",
+				"type": "String"
+			},
+			{
+				"name": "NA8",
+				"type": "String"
+			},
+			{
+				"name": "211.0963582",
+				"type": "String"
+			},
+			{
+				"name": "8.106",
+				"type": "String"
+			},
+			{
+				"name": "FALSE",
+				"type": "String"
+			},
+			{
+				"name": "112",
+				"type": "String"
+			},
+			{
+				"name": "24924.5",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

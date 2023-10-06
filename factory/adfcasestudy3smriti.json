@@ -1,0 +1,9 @@
+{
+	"name": "adfcasestudy3smriti",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a04547b3-8f25-45a8-8a5f-db884172ba4f",
+		"tenantId": "dce87315-8ffa-4a01-ab40-0de5a7214b2f"
+	}
+}

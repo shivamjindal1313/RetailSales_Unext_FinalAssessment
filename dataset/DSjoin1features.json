@@ -1,0 +1,84 @@
+{
+	"name": "DSjoin1features",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCasestudy3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Case Study Joins"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-bb62b77d-1053-46f0-aac0-36398ce64402-c000.csv",
+				"container": "outputretail"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Temperature",
+				"type": "String"
+			},
+			{
+				"name": "Fuel_Price",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown1",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown2",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown3",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown4",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown5",
+				"type": "String"
+			},
+			{
+				"name": "CPI",
+				"type": "String"
+			},
+			{
+				"name": "Unemployment",
+				"type": "String"
+			},
+			{
+				"name": "IsHoliday",
+				"type": "String"
+			},
+			{
+				"name": "Dept",
+				"type": "String"
+			},
+			{
+				"name": "Weekly_Sales",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

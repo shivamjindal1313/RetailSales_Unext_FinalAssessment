@@ -1,0 +1,48 @@
+{
+	"name": "DSinputSales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCasestudy3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Case Study 3"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sales data-set.csv",
+				"container": "inputretail"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Dept",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Weekly_Sales",
+				"type": "String"
+			},
+			{
+				"name": "IsHoliday",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

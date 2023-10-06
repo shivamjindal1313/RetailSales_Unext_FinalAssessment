@@ -1,0 +1,97 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DSinputFeatures",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "DSinputSales",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DSsalesfeatures",
+						"type": "DatasetReference"
+					},
+					"name": "salesfeatures"
+				}
+			],
+			"transformations": [
+				{
+					"name": "join1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Store as string,",
+				"          Date as string,",
+				"          Temperature as string,",
+				"          Fuel_Price as string,",
+				"          MarkDown1 as string,",
+				"          MarkDown2 as string,",
+				"          MarkDown3 as string,",
+				"          MarkDown4 as string,",
+				"          MarkDown5 as string,",
+				"          CPI as string,",
+				"          Unemployment as string,",
+				"          IsHoliday as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source(output(",
+				"          Store as string,",
+				"          Dept as string,",
+				"          Date as string,",
+				"          Weekly_Sales as string,",
+				"          IsHoliday as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source1, source2 join(source1@Store == source2@Store",
+				"     && source1@Date == source2@Date",
+				"     && source1@IsHoliday == source2@IsHoliday,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     partitionBy('hash', 1),",
+				"     broadcast: 'auto')~> join1",
+				"join1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Store as string,",
+				"          Date as string,",
+				"          Temperature as string,",
+				"          Fuel_Price as string,",
+				"          MarkDown1 as string,",
+				"          MarkDown2 as string,",
+				"          MarkDown3 as string,",
+				"          MarkDown4 as string,",
+				"          MarkDown5 as string,",
+				"          CPI as string,",
+				"          Unemployment as string,",
+				"          IsHoliday as string,",
+				"          Dept as string,",
+				"          Weekly_Sales as string,",
+				"          Type as string,",
+				"          Size as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> salesfeatures"
+			]
+		}
+	}
+}

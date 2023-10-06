@@ -1,0 +1,40 @@
+{
+	"name": "DSinputStores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCasestudy3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Case Study 3"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "stores data-set.csv",
+				"container": "inputretail"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			},
+			{
+				"name": "Size",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

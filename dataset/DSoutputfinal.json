@@ -1,0 +1,27 @@
+{
+	"name": "DSoutputfinal",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCasestudy3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Case Study Joins"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00003-ba79f7b4-f1c4-4338-bc00-aa81da6fb33f-c000.csv",
+				"container": "outputretail"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
